@@ -64,17 +64,54 @@
 // }
 
 //Pass by Value
+// #include<iostream>
+// using namespace std;
+// void dosomething(int num){
+//     cout<< num << endl;
+//     num = num + 5;
+//     cout << num << endl;
+
+// }
+// int main(){
+//     int num = 10;
+//     dosomething(num);  //Copy of num is passed to the function
+//     cout << num << endl;
+//     return 0;
+// }
+
+// #include<iostream>
+// using namespace std;
+// //Pass by Reference
+// void dosomething(string &s){     //&s -> reference variable it takes original  or get it from address, original one
+//     s[0] = 'B'; 
+//     cout << s << endl;
+// }
+// int main(){
+//     string s = "Cook";
+//     dosomething(s);
+//     cout << s << endl;
+//     return 0;
+
+// }
+
+
+
+//Pass By Reference
 #include<iostream>
 using namespace std;
-void dosomething(int num){
-    cout<< num << endl;
-    num = num + 5;
-    cout << num << endl;
 
+void dosomething(int arr[], int n){
+    arr[0] += 100;
+    cout << " Value inside function: " << arr[0] << endl;
 }
+
 int main(){
-    int num = 10;
-    dosomething(num);  //Copy of num is passed to the function
-    cout << num << endl;
+    int n = 4;
+    int arr[n];
+    for(int i = 0; i<n; i = i + 1){
+        cin >> arr[i];
+    }
+    dosomething(arr, n);
+    cout << " Value outside function: " << arr[0] << endl;
     return 0;
 }
